@@ -40,3 +40,5 @@ yarn-debug.log*
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
 test/
+spec/
+.rake_tasks~
