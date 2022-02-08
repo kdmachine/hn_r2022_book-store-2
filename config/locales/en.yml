@@ -28,3 +28,7 @@ en:
   signup: "Sign up"
   wanna_login: "Have an account? Login"
   confirm: "Confirm Password"
+
+  create: "Create"
+  create_category: "Create category"
+  update_category: "Update category"
