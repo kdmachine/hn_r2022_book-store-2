@@ -32,3 +32,16 @@ vi:
   create: "Create"
   create_category: "Tạo danh mục"
   update_category: "Cập nhật danh mục"
+  wanna_signup: "Cần một tài khoản?"
+  signup: Đăng ký
+  wanna_login: "Có tài khoản?"
+  confirm: "Xác nhận mật khẩu"
+  sign_fail: "Đăng ký thất bại"
+  success: "Thành công"
+  invalid_login: "Email/Mật khẩu không hợp lệ"
+  search_for: "Tìm kiếm..."
+
+  error:
+    error_valid: "Hiện đang có %{error}"
+    error: "lỗi"
+    not_found: "Trang không tồn tại"

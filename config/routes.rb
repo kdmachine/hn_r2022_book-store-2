@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
+    delete "/logout", to: "sessions#destroy"
 
     namespace :admin do
       resources :categories
     end
+    resources :users
   end
 end
