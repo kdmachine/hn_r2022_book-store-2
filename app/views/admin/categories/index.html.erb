@@ -1,0 +1,27 @@
+<% provide :title, t("all_category") %>
+<div class="container">
+  <h1><%= t "all_category" %></h1>
+  <div class="row">
+    <div class="col curd-container">
+      <%= link_to t("create"), new_admin_category_path, class: "btn btn-info" %>
+    </div>
+  </div>
+  <hr class="sidebar-divider">
+  <div class="container-fluid px-4">
+    <li class="row">
+      <div class="col-1">
+        <%= t("id") %>
+      </div>
+      <div class="col-2">
+        <%= t("name") %>
+      </div>
+      <div class="col-6">
+        <%= t("description") %>
+      </div>
+      <div class="col-3">
+        <%= t("action") %>
+      </div>
+    </li>
+  <%= render partial: :category, collection: @categories %>
+  </div>
+</div>

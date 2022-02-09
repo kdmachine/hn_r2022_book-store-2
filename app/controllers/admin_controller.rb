@@ -1,4 +1,4 @@
-class AdminPagesController < ApplicationController
+class AdminController < ApplicationController
   def home; end
 
   def category; end
