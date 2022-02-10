@@ -1,3 +1,5 @@
+@import "color";
+
 aside {
   section.category-info {
     margin-top: 20px;
@@ -24,3 +26,18 @@ aside {
     }
   }
 }
+
+.col-1 a {
+  text-decoration: none;
+}
+
+.col-2 a {
+  text-decoration: none;
+}
+
+.required:after{
+  content:" *";
+  color: $red;
+}
+
+.float-right{float:right!important}

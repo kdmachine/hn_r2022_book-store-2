@@ -1020,6 +1020,13 @@
   "resolved" "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz"
   "version" "4.0.0"
 
+"@types/popper.js@^1.11.0":
+  "integrity" "sha512-1SDEDA6VacGAqDOmwbMcJD39bg0sHbM8y6LHOV3CMxyDBRrwTodRyIIj5f4eR/nlgpeyPoG1fKXqbkRmg+5yRg=="
+  "resolved" "https://registry.npmjs.org/@types/popper.js/-/popper.js-1.11.0.tgz"
+  "version" "1.11.0"
+  dependencies:
+    "popper.js" "*"
+
 "@types/q@^1.5.1":
   "integrity" "sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ=="
   "resolved" "https://registry.npmjs.org/@types/q/-/q-1.5.5.tgz"
@@ -4807,6 +4814,11 @@
   dependencies:
     "ts-pnp" "^1.1.6"
 
+"popper.js@*":
+  "integrity" "sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ=="
+  "resolved" "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
+  "version" "1.16.1"
+
 "portfinder@^1.0.26":
   "integrity" "sha512-Se+2isanIcEqf2XMHjyUKskczxbPH7dQnlMjXX6+dybayyHvAf/TCgyMRlzf/B6QDhAEFOGes0pzRo3by4AbMA=="
   "resolved" "https://registry.npmjs.org/portfinder/-/portfinder-1.0.28.tgz"
@@ -5950,6 +5962,11 @@
   "integrity" "sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo="
   "resolved" "https://registry.npmjs.org/select-hose/-/select-hose-2.0.0.tgz"
   "version" "2.0.0"
+
+"select2@^4.1.0-rc.0":
+  "integrity" "sha512-Hr9TdhyHCZUtwznEH2CBf7967mEM0idtJ5nMtjvk3Up5tPukOLXbHUNmh10oRfeNIhj+3GD3niu+g6sVK+gK0A=="
+  "resolved" "https://registry.npmjs.org/select2/-/select2-4.1.0-rc.0.tgz"
+  "version" "4.1.0-rc.0"
 
 "selfsigned@^1.10.8":
   "integrity" "sha512-lkjaiAye+wBZDCBsu5BGi0XiLRxeUlsGod5ZP924CRSEoGuZAw/f7y9RKu28rwTfiHVhdavhB0qH0INV6P1lEA=="

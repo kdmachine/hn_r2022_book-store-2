@@ -2,7 +2,7 @@ class Admin::CategoriesController < AdminController
   before_action :load_category, except: %i(index new create)
 
   def index
-    @categories = Category.recent_add
+    @pagy, @categories = pagy Category.recent_add
   end
 
   def show; end
@@ -45,7 +45,7 @@ class Admin::CategoriesController < AdminController
   private
 
   def category_params
-    params.require(:category).permit :name, :desc
+    params.require(:category).permit Category::PROPERTIES
   end
 
   def load_category

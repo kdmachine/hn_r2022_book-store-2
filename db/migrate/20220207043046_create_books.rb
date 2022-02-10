@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :desc
       t.integer :nopage
-      t.integer :quantity
+      t.integer :quantity, default: 0
       t.decimal :price
       t.references :publisher, null: false, foreign_key: true
       t.references :category, null: false, foreign_key: true

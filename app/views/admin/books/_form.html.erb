@@ -1,0 +1,49 @@
+<%= form_for [:admin, @book] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="row">
+    <div class="col-sm">
+      <div class="col-9">
+        <%= f.label :name, t(".name"), class: "required" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.label :desc, t(".description"), class: "required" %>
+        <%= f.text_area :desc, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.label :nopage, t(".number_of_pages"), class: "required" %>
+        <%= f.number_field :nopage, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.label :quantity, t(".quantity"), class: "required" %>
+        <%= f.number_field :quantity, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.label :price, t(".price"), class: "required" %>
+        <%= f.number_field :price, class: "form-control" %>
+      </div>
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm">
+      <div class="col-9">
+        <%= f.label :category_id, t(".category"), class: "required" %>
+        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.fields_for :book_authors do |book_author| %>
+          <%= f.label :author_id, t(".author"), class: "required" %>
+          <%= book_author.select :author_id, Author.pluck(:name, :id), {include_blank: false},
+            class: "author-multiple form-control", multiple: true %>
+        <% end %>
+      </div>
+      <div class="col-9">
+        <%= f.label :publisher_id, t(".publisher"), class: "required" %>
+        <%= f.collection_select :publisher_id, Publisher.order(:name), :id, :name, {include_blank: true}, class: "form-control" %>
+      </div>
+      <div class="col-9">
+        <%= f.label :images, t(".images"), class: "required" %>
+        <%= f.file_field :images, class: "form-control", multiple: true %>
+      </div>
+    </div>
+  </div>
+<% end %>
