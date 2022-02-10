@@ -32,3 +32,16 @@ en:
   create: "Create"
   create_category: "Create category"
   update_category: "Update category"
+  wanna_signup: "Need an account?"
+  signup: "Sign up"
+  wanna_login: "Have an account?"
+  confirm: "Confirm Password"
+  sign_fail: "Sign up fail"
+  success: "Success"
+  invalid_login: "Invalid email/password combination"
+  search_for: "Search for..."
+
+  error:
+    error_valid: "The form contains %{error}"
+    error: "error"
+    not_found: "Page not found"

@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  protect_from_forgery with: :exception
+  include SessionsHelper
 
   private
   def set_locale
@@ -8,5 +10,13 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "error.not_found"
+    redirect_to root_url
   end
 end
