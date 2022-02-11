@@ -1,0 +1,16 @@
+=> [[32m#<User:0x00007f5569139e60[0m
+  id: [1;34m5[0m,
+  name: [31m[1;31m"[0m[31mKieu Duong[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mkieuduongls.it@gmail.com[1;31m"[0m[31m[0m,
+  address: [1;36mnil[0m,
+  phone: [1;34m852569889[0m,
+  password_digest: [31m[1;31m"[0m[31m[FILTERED][1;31m"[0m[31m[0m,
+  activation_digest: [1;36mnil[0m,
+  activated: [1;36mnil[0m,
+  reset_digest: [1;36mnil[0m,
+  remember_digest: [1;36mnil[0m,
+  activated_at: [1;36mnil[0m,
+  reset_sent_at: [1;36mnil[0m,
+  role: [31m[1;31m"[0m[31madmin[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m09[0m [1;34;4mFeb[0m [1;34m2022[0m [1;34m06[0m:[1;34m25[0m:[1;35m28.133576000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mThu[0m, [1;34m10[0m [1;34;4mFeb[0m [1;34m2022[0m [1;34m08[0m:[1;34m05[0m:[1;35m09.374808000[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]

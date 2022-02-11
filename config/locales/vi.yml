@@ -1,8 +1,14 @@
 vi:
   title: "BookStore Manage"
   home: "Book Store"
+  home_admin: "Book Store admin"
   category: "Danh mục"
   product: "Sản phẩm"
+  all_category: "Tất cả danh mục"
+  all_product: "Tất cả Sản phẩm"
+  my_order: "Đơn hàng của tôi"
+  contact: "Liên hệ"
+  cart: "Giỏ hàng"
   order: "Đơn hàng"
   account: "Tài khoản"
   profile: "Trang cá nhân"
@@ -12,7 +18,9 @@ vi:
   name: "Tên"
   quantity: "Số lượng"
   cost: "Giá"
+  total: "Tổng"
   publisher: "Nhà phát hành"
+  author: "Tác giả"
   order_at: "Đặt hàng ngày"
   customer_name: "Tên khách hàng"
   status: "Trạng thái"
@@ -40,8 +48,20 @@ vi:
   success: "Thành công"
   invalid_login: "Email/Mật khẩu không hợp lệ"
   search_for: "Tìm kiếm..."
+  back: "Quay lại"
+  checkout: "Đặt hàng"
 
   error:
     error_valid: "Hiện đang có %{error}"
     error: "lỗi"
     not_found: "Trang không tồn tại"
+
+  store:
+    new_product: "Sản phẩm mới"
+    all_product: "Tất cả Sản phẩm"
+    product_name: "Product name example"
+    product_category: "Category name example"
+    product_price: "10.000 VND"
+    add_to_cart: "Thêm vào giỏ"
+    order: 
+      product: "Sản phẩm của bạn"
