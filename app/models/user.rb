@@ -4,6 +4,8 @@ class User < ApplicationRecord
   PROPERTIES = %i(name email password password_confirmation).freeze
   before_save :downcase_email
 
+  enum role: {user: 0, admin: 1}
+
   validates :name, presence: true,
     length: {maximum: Settings.digit_50}
   validates :email, presence: true,

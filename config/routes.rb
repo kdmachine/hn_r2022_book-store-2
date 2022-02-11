@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "admin#home"
-    get "admin/home"
-    get "/product", to: "admin#product"
-    get "/order", to: "admin#order"
-    get "/account", to: "admin#account"
+    root "store#home"
+    get "store/home"
+    get "/product", to: "store#product"
+    get "/order", to: "store#order"
+    get "/cart", to: "store#cart"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     get "/signup", to: "users#new"
@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
 
     namespace :admin do
+      resources :homes
       resources :categories
+      resources :products
+      resources :orders
+      resources :accounts
     end
     resources :users
   end
