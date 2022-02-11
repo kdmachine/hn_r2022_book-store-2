@@ -11,12 +11,14 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     delete "/logout", to: "sessions#destroy"
 
+    resources :categories, only: %i(show)
     namespace :admin do
       resources :homes
       resources :categories
       resources :products
       resources :orders
       resources :accounts
+      resources :books
     end
     resources :users
   end

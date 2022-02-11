@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  PROPERTIES = %i(name desc).freeze
+
   has_many :books, dependent: :nullify
 
   scope :recent_add, ->{order created_at: :desc}
