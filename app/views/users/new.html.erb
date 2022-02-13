@@ -1,3 +1,5 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t("signup") %>
 <div id="layoutAuthentication">
   <div id="layoutAuthentication_content">
     <main>
@@ -7,40 +9,11 @@
             <div class="card shadow-lg border-0 rounded-lg mt-5">
               <div class="card-header"><h3 class="text-center font-weight-light my-4"><%= t "signup" %></h3></div>
                 <div class="card-body">
-                  <%= form_for(@user) do |f| %>
-                    <%= render "shared/error_messages", object: f.object %>
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :name, class: "form-control" %>
-                      <label><%= t "name" %></label>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :email, class: "form-control" %>
-                      <label><%= t "email" %></label>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6">
-                        <div class="form-floating mb-3 mb-md-0">
-                          <%= f.password_field :password, class: "form-control" %>
-                          <label><%= t "password" %></label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating mb-3 mb-md-0">
-                          <%= f.password_field :password_confirmation, class: "form-control" %>
-                          <label><%= t "confirm" %></label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-4 mb-0">
-                      <div class = "d-grid">
-                        <%= f.submit t("signup"), class: "btn btn-primary btn-block" %>
-                      </div>
-                    </div>
-                  <% end %>
+                  <%= render "form" %>
                 </div>
               <div class="card-footer text-center py-3">
-                  <p><%= t "wanna_login", class: "small" %>
-                  <%= link_to t("login"), login_path %></p>
+                <p><%= t "wanna_login", class: "small" %>
+                <%= link_to t("login"), login_path %></p>
               </div>
             </div>
           </div>

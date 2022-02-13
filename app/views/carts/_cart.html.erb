@@ -23,6 +23,7 @@
         remote: true, class: "btn btn-primary col ml-1"
       %>
     </div>
+    <%= render partial: "quantities/quantity", locals: {cart: cart} %>
   </td>
   <td class="font-weight-semibold align-middle p-4"><%= price_format(cart["quantity"]*@book.price) %></td>
   <td class="text-center align-middle">

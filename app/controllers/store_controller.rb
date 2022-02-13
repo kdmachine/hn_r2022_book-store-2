@@ -10,4 +10,10 @@ class StoreController < ApplicationController
   def checkout; end
 
   def order; end
+
+  private
+  def init_cart
+    session[:cart] ||= []
+    @cart = session[:cart]
+  end
 end
