@@ -31,8 +31,9 @@
       </div>
       <div class="col-9">
         <%= f.fields_for :book_authors do |book_author| %>
-          <%= f.label :author_id, t(".author"), class: "required" %>
-          <%= book_author.select :author_id, Author.pluck(:name, :id), {include_blank: false},
+          <%= book_author.label :author_id, t(".author"), class: "required" %>
+          <%= book_author.select :author_id, Author.pluck(:name, :id),
+            {include_blank: false, selected: Author.first&.id},
             class: "author-multiple form-control", multiple: true %>
         <% end %>
       </div>

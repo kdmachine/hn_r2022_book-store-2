@@ -14,6 +14,10 @@ class Admin::BooksController < AdminController
 
   def create
     @book = Book.new book_params
+    params.dig(:book, :book_authors, :author_id)&.compact_blank!&.each do |val|
+      @book.book_authors.build[:author_id] = val
+    end
+
     if @book.save
       flash[:success] = t ".success"
       redirect_to admin_books_path
