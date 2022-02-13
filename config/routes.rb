@@ -26,7 +26,11 @@ Rails.application.routes.draw do
       resources :products
       resources :orders
       resources :accounts
-      resources :books
+      resources :books do
+        member do
+          delete :delete_image_attachment
+        end
+      end
     end
     resources :users
   end

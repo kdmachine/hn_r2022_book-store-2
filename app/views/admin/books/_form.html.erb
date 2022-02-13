@@ -27,7 +27,8 @@
     <div class="col-sm">
       <div class="col-9">
         <%= f.label :category_id, t(".category"), class: "required" %>
-        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, class: "form-control" %>
+        <%= f.collection_select :category_id, Category.order(:name), :id, :name,
+          {include_blank: true}, class: "form-control" %>
       </div>
       <div class="col-9">
         <%= f.fields_for :book_authors do |book_author| %>
@@ -39,11 +40,27 @@
       </div>
       <div class="col-9">
         <%= f.label :publisher_id, t(".publisher"), class: "required" %>
-        <%= f.collection_select :publisher_id, Publisher.order(:name), :id, :name, {include_blank: true}, class: "form-control" %>
+        <%= f.collection_select :publisher_id, Publisher.order(:name), :id, :name,
+          {include_blank: true}, class: "form-control" %>
       </div>
       <div class="col-9">
         <%= f.label :images, t(".images"), class: "required" %>
         <%= f.file_field :images, class: "form-control", multiple: true %>
+        <div class="gallery d-flex"></div>
+          <div class="gallery-w d-flex " id="book_show">
+            <% if @book.persisted? %>
+              <% f.object.images.each do |image| %>
+                <div class="d-block mb-4 h-100">
+                  <%= image_tag image, {class: "img-fluid img-thumbnail"}%>
+                  <%= link_to t(".remove"), delete_image_attachment_admin_book_url(image.id),
+                              method: :delete,
+                              data: { confirm: t(".sure")},
+                              remote: true %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

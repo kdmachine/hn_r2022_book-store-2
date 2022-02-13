@@ -1,18 +1,27 @@
 <% provide:title, @book.name %>
-<div class="row">
-  <aside class="col">
-    <section class="category-info">
-      <h1><%= @book.name %></h1>
-      <span><%= @book.desc %></span>
-      <span><%= @book.nopage %></span>
-      <span><%= @book.quantity %></span>
-      <span><%= @book.price %></span>
-      <span><%= @book.category_name %></span>
-      <span><%= @book.publisher_name %></span>
-        <%= link_to t(".edit"), edit_admin_book_path(@book),
-          class: "btn btn-warning" %>
-        <%= link_to t(".delete"), [:admin, @book], method: :delete,
-          class: "btn btn-danger", data: { confirm: t(".rusure") } %>
-    </section>
-  </aside>
-</div>
+<aside class="col">
+  <section class="category-info">
+    <div class="row">
+      <div class="col-2">
+        <span>
+          <% @book.images.each do |image| %>
+            <%= image_tag image, class: "img-fluid img-table" %>
+          <% end %>
+        </span>
+      </div>
+      <div class="col-9">
+        <h1><%= @book.name %></h1>
+        <span><%= t "category" %>: <%= @book.desc %></span>
+        <span><%= t "num_of_pages" %>: <%= @book.nopage %></span>
+        <span><%= t "quantity" %>: <%= @book.quantity %></span>
+        <span><%= t "price" %>: <%= @book.price %></span>
+        <span><%= t "category" %>: <%= @book.category_name %></span>
+        <span><%= t "publisher" %>: <%= @book.publisher_name %></span>
+      </div>
+    </div>
+    <%= link_to t(".edit"), edit_admin_book_path(@book),
+      class: "btn btn-warning" %>
+    <%= link_to t(".delete"), [:admin, @book], method: :delete,
+      class: "btn btn-danger", data: { confirm: t(".rusure") } %>
+  </section>
+</aside>
