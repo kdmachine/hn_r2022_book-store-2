@@ -6,6 +6,9 @@ import 'bootstrap'
 import $ from 'jquery';
 import 'select2'
 import 'select2/dist/css/select2.css'
+import './book_details'
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 
 require('jquery')
 

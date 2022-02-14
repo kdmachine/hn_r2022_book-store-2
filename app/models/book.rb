@@ -1,19 +1,16 @@
 class Book < ApplicationRecord
   PROPERTIES = [:name, :desc, :nopage, :quantity, :price,
-                :publisher_id, :category_id, :images,
-                book_authors_attributes: [:author_id, :_destroy]].freeze
+                :publisher_id, :category_id, :images].freeze
 
   scope :recent_add, ->{order created_at: :desc}
 
   belongs_to :publisher
   belongs_to :category
-  has_many :order_details, dependent: :destroy
+  has_many :order_details, dependent: :nullify
   has_many :orders, through: :order_details
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
   has_many_attached :images
-
-  accepts_nested_attributes_for :book_authors, allow_destroy: true
 
   delegate :name, to: :publisher, prefix: true
   delegate :name, to: :category, prefix: true
