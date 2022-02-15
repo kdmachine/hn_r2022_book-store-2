@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   PROPERTIES = [:name, :desc, :nopage, :quantity, :price,
-                :publisher_id, :category_id, :images].freeze
+                :publisher_id, :category_id,
+                book_authors: [], images: []].freeze
 
   scope :recent_add, ->{order created_at: :desc}
 
@@ -26,8 +27,12 @@ class Book < ApplicationRecord
   validates :price, presence: true,
     numericality: {only_integer: true, greater_than: Settings.zero}
   validates :images,
-            content_type: {in: Settings.image_type,
-                           message: I18n.t("invalid_image_type")},
-                           size: {less_than: Settings.image_size,
-                                  message: I18n.t("invalid_image_size")}
+            content_type: {
+              in: Settings.image_type,
+              message: I18n.t("invalid_image_type")
+            },
+            size: {
+              less_than: Settings.image_size.megabytes,
+              message: I18n.t("invalid_image_size")
+            }
 end

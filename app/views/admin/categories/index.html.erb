@@ -7,7 +7,6 @@
     </div>
   </div>
   <hr class="sidebar-divider">
-  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
   <table class="table table-bordered">
     <thead class="thead-dark">
       <tr>
@@ -21,4 +20,5 @@
       <%= render @categories %>
     </tbody>
   </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
 </div>

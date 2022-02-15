@@ -2,7 +2,7 @@ class Admin::BooksController < AdminController
   before_action :load_book, except: %i(index new create)
 
   def index
-    @pagy, @books = pagy Book.recent_add
+    @pagy, @books = pagy Book.recent_add, items: Settings.page_items_10
   end
 
   def show; end

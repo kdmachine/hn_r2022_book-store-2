@@ -1,8 +1,14 @@
 max_name: 20
 max_desc: 1000
 digit_50: 50
+digit_100: 100
 email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 digit_255: 255
 digit_6: 6
 zero: 0
 one: 1
+image_type: ["image/jpeg", "image/gif", "image/png"]
+image_size: 5
+book_img_width: 200
+book_img_height: 320
+page_items_10: 10

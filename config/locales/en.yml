@@ -17,7 +17,7 @@ en:
   id: "ID"
   name: "Name"
   quantity: "Quantity"
-  cost: "Cost"
+  price: "Price"
   total: "Total"
   publisher: "Publisher"
   author: "Author"
