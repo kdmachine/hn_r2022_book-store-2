@@ -128,10 +128,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_035247) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "book_authors", "authors"
-  add_foreign_key "book_authors", "books"
-  add_foreign_key "books", "categories"
-  add_foreign_key "books", "publishers"
   add_foreign_key "oder_details", "books"
   add_foreign_key "oder_details", "orders"
   add_foreign_key "orders", "users"

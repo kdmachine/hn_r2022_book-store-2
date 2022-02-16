@@ -609,6 +609,10 @@ progress {
   height: auto;
 }
 
+.img-table {
+  height: 120px !important;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -4563,6 +4567,10 @@ textarea.form-control-lg {
 .card > .card-header + .list-group,
 .card > .list-group + .card-footer {
   border-top: 0;
+}
+
+.card-img-height {
+  height: 300px !important;
 }
 
 .card-body {

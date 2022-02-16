@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "store#home"
     get "store/home"
-    get "/product", to: "store#product"
+    get "/books", to: "store#books"
     get "/order", to: "store#order"
     get "/cart", to: "store#cart"
     get "/login", to: "sessions#new"

@@ -17,7 +17,7 @@ vi:
   id: "ID"
   name: "Tên"
   quantity: "Số lượng"
-  cost: "Giá"
+  Price: "Giá"
   total: "Tổng"
   publisher: "Nhà phát hành"
   author: "Tác giả"

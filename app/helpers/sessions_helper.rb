@@ -12,7 +12,7 @@ module SessionsHelper
   end
 
   def logged_by_admin?
-    @current_user&.admin?
+    current_user&.admin?
   end
 
   def log_out
