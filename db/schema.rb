@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_035247) do
+ActiveRecord::Schema.define(version: 2022_02_17_142504) do
 
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 2022_02_10_035247) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
+  end
+
+  create_table "carts", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "quantity", limit: 2
+    t.datetime "date_add"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_carts_on_book_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "categories", charset: "utf8mb3", force: :cascade do |t|
@@ -128,6 +139,8 @@ ActiveRecord::Schema.define(version: 2022_02_10_035247) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "carts", "books"
+  add_foreign_key "carts", "users"
   add_foreign_key "oder_details", "books"
   add_foreign_key "oder_details", "orders"
   add_foreign_key "orders", "users"

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :orders, dependent: :destroy
+  has_many :carts, dependent: :destroy
 
   PROPERTIES = %i(name email password password_confirmation).freeze
   before_save :downcase_email

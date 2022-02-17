@@ -5,14 +5,19 @@ Rails.application.routes.draw do
     get "/books", to: "store#books"
     get "/order", to: "store#order"
     get "/cart", to: "store#cart"
+    post "/cart", to: "store#cart"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     delete "/logout", to: "sessions#destroy"
+    delete "/carts", to: "carts#destroy", as: :delete_cart
+    put "/minus_items", to: "minus_items#update", as: :quantity_minus
+    put "/plus_items", to: "plus_items#update", as: :quantity_plus
 
     resources :categories, only: %i(show)
     resources :books
+    resources :carts, only: :create
     namespace :admin do
       resources :homes
       resources :categories

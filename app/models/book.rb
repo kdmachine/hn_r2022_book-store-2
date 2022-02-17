@@ -12,6 +12,7 @@ class Book < ApplicationRecord
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
   has_many_attached :images
+  has_many :carts, dependent: :destroy
 
   delegate :name, to: :publisher, prefix: true
   delegate :name, to: :category, prefix: true
