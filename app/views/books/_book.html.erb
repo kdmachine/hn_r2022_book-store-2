@@ -17,14 +17,15 @@
           <div class="product-price-discount">
             <span><%= t "price" %>: <%= price_format @book.price %></span>
           </div>
-          <div class="product-count">
-            <label for="size"><%= t "quantity" %>: <%= @book.quantity %></label>
-            <form action="#" class="display-flex">
-            <div class="qtyminus">-</div>
-            <input type="text" name="quantity" value="1" class="qty">
-            <div class="qtyplus">+</div>
-            </form>
-            <a href="#" class="round-black-btn"><%= t "add_to_cart" %></a>
+          <div class="">
+            <span><%= t "quantity" %>: <%= @book.quantity %></span>
+          </div>
+          <div class="product-count row">
+            <%= form_for(Cart.new, url: carts_path) do |f| %>
+              <%= f.number_field :quantity, min: 1, max: @book.quantity, value: 1 %>
+              <%= f.number_field :book_id, value: @book.id, hidden: true %>
+              <%= f.submit t("store.add_to_cart"), class: "round-black-btn" %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -23,4 +23,18 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "error.not_found"
     redirect_to root_url
   end
+
+  def refresh
+    redirect_back fallback_location: root_url
+  end
+
+  def init_cart
+    @cart = session[:cart]
+  end
+
+  def get_cart_book
+    @cart.each do |item|
+      @get_cart_book = item if item["book_id"] == params[:book_id].to_i
+    end
+  end
 end
