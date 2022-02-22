@@ -3,33 +3,19 @@
   <table class="table table-bordered">
     <thead class="thead-dark">
       <tr>
-        <th scope="col"><%= t "id" %></th>
-        <th scope="col"><%= t "product" %></th>
-        <th scope="col"><%= t "price" %></th>
+        <th scope="col"><%= t "address" %></th>
         <th scope="col"><%= t "order_at" %></th>
         <th scope="col"><%= t "status" %></th>
         <th scope="col"><%= t "shiped_date" %></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>
-          <div>
-            <img src="https://cdn0.fahasa.com/media/catalog/product/d/r/dr.-stone---tap-10.jpg" width="auto" height="100" alt="">
-            <label><%= t "store.product_name" %></label>
-          </div>
-
-          <div>
-            <img src="https://cdn0.fahasa.com/media/catalog/product/d/r/dr.-stone---tap-10.jpg" width="auto" height="100" alt="">
-            <label><%= t "store.product_name" %></label>
-          </div>
-        </td>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-      </tr>
+      <% list_order = Order.get_order(current_user[:id]) %>
+      <% if list_order.any? %>
+        <% list_order.each do |item| %>
+          <%= render partial: "orders/order", locals: {order: item} %>
+        <% end %>
+      <% end %>
     </tbody>
   </table>
 </div>

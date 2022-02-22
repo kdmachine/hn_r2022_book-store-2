@@ -50,6 +50,10 @@ en:
   search_for: "Search for..."
   back: "Back"
   checkout: "Checkout"
+  added_to_cart: "Successfully added to cart"
+  delete: "Delete"
+  go_checkout: "Go to check out"
+  please_login: "Please login to check out."
 
   error:
     error_valid: "The form contains %{error}"

@@ -1,0 +1,11 @@
+<%= form_for(Order.new, url: orders_path) do |f| %>
+  <%= f.label :customer_name, t("name"), :required => true, class: "required mt-2" %>
+  <%= f.text_field :customer_name, class: "form-control"%>
+  <%= f.label :delivery_phone, t("phone"), :required => true, class: "required mt-2" %>
+  <%= f.text_field :delivery_phone, class: "form-control" %>
+  <%= f.label :delivery_address, t("address"), :required => true, class: "required mt-2" %>
+  <%= f.text_field :delivery_address, class: "form-control" %>
+  <%= f.label :note, t("note"), class: "mt-2" %>
+  <%= f.text_area :note, class: "form-control" %>
+  <%= f.submit t("checkout"), disabled: @cart.blank?, class: "btn btn-lg btn-primary mt-2 float-right" %>
+<% end %>

@@ -12,3 +12,4 @@ image_size: 5
 book_img_width: 200
 book_img_height: 320
 page_items_10: 10
+phone_number_lenght: !ruby/range 10..10

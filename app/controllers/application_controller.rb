@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def init_cart
+    session[:cart] ||= []
     @cart = session[:cart]
   end
 
