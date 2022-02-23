@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
-  before_action :init_cart, only: %i(cart)
+  before_action :init_cart, only: %i(cart checkout)
 
   def home; end
 
@@ -7,13 +7,7 @@ class StoreController < ApplicationController
 
   def category; end
 
-  def product; end
+  def checkout; end
 
   def order; end
-
-  private
-  def init_cart
-    session[:cart] ||= []
-    @cart = session[:cart]
-  end
 end

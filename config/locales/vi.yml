@@ -50,6 +50,10 @@ vi:
   search_for: "Tìm kiếm..."
   back: "Quay lại"
   checkout: "Đặt hàng"
+  added_to_cart: "Thêm vào giỏ thành công"
+  delete: "Xoá"
+  go_checkout: "Đi tới đặt hàng"
+  please_login: "Vui lòng đăng nhập để đặt hàng."
 
   error:
     error_valid: "Hiện đang có %{error}"

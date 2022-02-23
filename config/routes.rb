@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "/order", to: "store#order"
     get "/cart", to: "store#cart"
     post "/cart", to: "store#cart"
+    get "/checkout", to: "store#checkout"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     get "/signup", to: "users#new"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
     resources :categories, only: %i(show)
     resources :books
     resources :carts, only: :create
+    resources :orders, only: %i(new create)
     namespace :admin do
       resources :homes
       resources :categories
