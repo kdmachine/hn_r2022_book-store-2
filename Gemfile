@@ -27,8 +27,13 @@ gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 gem "webpacker", "~> 5.0"
 gem "yaml_db"
+gem "simplecov"
+gem "simplecov-rcov"
 
 group :development, :test do
+  gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
   gem "byebug", platforms: %i(mri mingw x64_mingw)
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 0.74.0", require: false
