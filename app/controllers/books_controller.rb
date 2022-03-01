@@ -1,9 +1,8 @@
 class BooksController < ApplicationController
-  def index; end
-
-  def new; end
-
-  def create; end
+  def index
+    @pagy, @books = pagy Book.search(params[:term]),
+                         items: Settings.page_items_10
+  end
 
   def show
     @book = Book.find_by(id: params[:id])

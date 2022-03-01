@@ -1,9 +1,7 @@
 class Book < ApplicationRecord
   PROPERTIES = [:name, :desc, :nopage, :quantity, :price,
-                :publisher_id, :category_id,
+                :publisher_id, :category_id, :term,
                 book_authors: [], images: []].freeze
-
-  scope :recent_add, ->{order created_at: :desc}
 
   belongs_to :publisher
   belongs_to :category
@@ -36,4 +34,8 @@ class Book < ApplicationRecord
               less_than: Settings.image_size.megabytes,
               message: I18n.t("invalid_image_size")
             }
+
+  scope :recent_add, ->{order created_at: :desc}
+  scope :load_book_in_category, ->(category_id){where(category_id: category_id)}
+  scope :check_order_detail, ->(book_id){where(book_id: book_id)}
 end

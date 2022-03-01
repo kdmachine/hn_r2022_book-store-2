@@ -18,4 +18,5 @@
   <td class="font-weight-semibold align-middle p-4"><%= order.created_at.to_formatted_s(:long_ordinal) %></td>
   <td class="font-weight-semibold align-middle p-4"><%= order.status %></td>
   <td class="font-weight-semibold align-middle p-4"><%= order.shiped_date %></td>
+  <td><%= link_to t("detail"), order_path(order.id), class: "btn btn-warning center" %></td>
 </tr>

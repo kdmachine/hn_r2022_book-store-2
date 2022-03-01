@@ -1,0 +1,15 @@
+<tr>
+  <td class="p-4">
+    <div class="media align-items-center">
+      <div class="card-img-actions">
+        <% find_book(book.book_id).images.each do |image| %>
+          <%= image_tag image, class: "img-fluid img-table" %>
+        <% end %>
+      </div>
+      <h5 class="font-weight-semibold ml-3"><%= @book.name %></h5>
+    </div>
+  </td>
+  <td class="font-weight-semibold align-middle p-4"><%= price_format(book.price) %></td>
+  <td class="font-weight-semibold align-middle p-4"><%= book.quantity %></td>
+  <td class="font-weight-semibold align-middle p-4"><%= price_format(book.quantity * book.price) %></td>
+</tr>

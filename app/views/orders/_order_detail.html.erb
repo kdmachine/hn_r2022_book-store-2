@@ -1,0 +1,43 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><%= t "product" %></th>
+      <th scope="col"><%= t "price" %></th>
+      <th scope="col"><%= t "quantity" %></th>
+      <th scope="col"><%= t "total_price" %></th>
+    </tr>
+  </thead>
+  <tbody class="align-items-center">
+    <%= render partial: "order_detail_items", collection: order.order_details, as: :book %>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th><%= t "total_order" %></th>
+      <td><%= price_format(order.order_price) %></td>
+    </tr>
+    <tr>
+      <th><%= t "order_at" %></th>
+      <td><%= order.created_at.to_formatted_s(:long_ordinal) %></td>
+    </tr>
+      <th><%= t "name" %></th>
+      <td><%= order.customer_name %></td>
+    <tr>
+      <th><%= t "phone" %></th>
+      <td><%= order.delivery_phone %></td>
+    </tr>
+    <tr>
+      <th><%= t "address" %></th>
+      <td><%= order.delivery_address %></td>
+    </tr>
+    <tr>
+      <th><%= t "status" %></th>
+      <td><%= order.status %></td>
+    </tr>
+    <tr>
+      <th><%= t "shiped_date" %></th>
+      <td><%= order.shiped_date %></td>
+    </tr>
+  </tbody>
+</table>

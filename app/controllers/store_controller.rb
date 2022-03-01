@@ -5,11 +5,7 @@ class StoreController < ApplicationController
 
   def cart; end
 
-  def category; end
-
   def checkout; end
-
-  def order; end
 
   private
   def init_cart
