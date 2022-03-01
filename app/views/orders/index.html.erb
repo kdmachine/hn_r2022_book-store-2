@@ -7,12 +7,12 @@
         <th scope="col"><%= t "order_at" %></th>
         <th scope="col"><%= t "status" %></th>
         <th scope="col"><%= t "shiped_date" %></th>
+        <th scope="col"></th>
       </tr>
     </thead>
-    <tbody>
-      <% list_order = Order.get_order(current_user[:id]) %>
-      <% if list_order.any? %>
-        <% list_order.each do |item| %>
+    <tbody class="align-items-center">
+      <% if @orders.any? %>
+        <% @orders.each do |item| %>
           <%= render partial: "orders/order", locals: {order: item} %>
         <% end %>
       <% end %>

@@ -3,6 +3,18 @@ class OrdersController < ApplicationController
 
   def new; end
 
+  def index
+    @orders = Order.get_order(current_user[:id])
+  end
+
+  def show
+    @order = Order.get_order(current_user[:id])
+    return if @order
+
+    flash[:danger] = t "not_found"
+    redirect_to root_path
+  end
+
   def create
     init_order
     create_order_detail

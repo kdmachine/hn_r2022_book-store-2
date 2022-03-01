@@ -2,7 +2,8 @@ class Admin::CategoriesController < AdminController
   before_action :load_category, except: %i(index new create)
 
   def index
-    @pagy, @categories = pagy Category.recent_add
+    @pagy, @categories = pagy Category.recent_add.search(params[:term]),
+                              items: Settings.page_items_10
   end
 
   def show; end

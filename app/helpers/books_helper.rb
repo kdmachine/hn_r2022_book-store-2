@@ -1,8 +1,4 @@
 module BooksHelper
-  def load_book
-    Book.all
-  end
-
   def find_book id
     return @book if (@book = Book.find_by id: id)
 

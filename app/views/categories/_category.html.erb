@@ -1,0 +1,23 @@
+<div class="col-md-3 mt-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-img-actions">
+        <% book.images.each do |image| %>
+          <%= image_tag image, class: "card-img card-img-height" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-body bg-light text-center">
+      <div class="mb-2">
+        <h6 class="font-weight-bold mb-2"><%= link_to book.name, book_path(book.id) %></h6> 
+        <a href="#" class="text-muted" data-abc="true"><%= book.category_name %></a>
+      </div>
+      <h4 class="mb-0 pb-2 font-weight-semibold"><%= price_format book.price %></h4>
+      <%= form_for(Cart.new, url: carts_path) do |f| %>
+        <%= f.number_field :quantity, value: 1, hidden: true %>
+        <%= f.number_field :book_id, value: book.id, hidden: true %>
+        <%= f.submit t("store.add_to_cart"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

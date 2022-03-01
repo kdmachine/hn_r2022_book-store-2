@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "store#home"
     get "store/home"
-    get "/books", to: "store#books"
-    get "/order", to: "store#order"
     get "/cart", to: "store#cart"
     post "/cart", to: "store#cart"
     get "/checkout", to: "store#checkout"
@@ -17,9 +15,9 @@ Rails.application.routes.draw do
     put "/plus_items", to: "plus_items#update", as: :quantity_plus
 
     resources :categories, only: %i(show)
-    resources :books
+    resources :books, only: %i(index show)
     resources :carts, only: :create
-    resources :orders, only: %i(new create)
+    resources :orders, only: %i(index show new create)
     namespace :admin do
       resources :homes
       resources :categories

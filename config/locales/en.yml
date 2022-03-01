@@ -48,6 +48,7 @@ en:
   success: "Success"
   invalid_login: "Invalid email/password combination"
   search_for: "Search for..."
+  search: "Search"
   back: "Back"
   checkout: "Checkout"
   added_to_cart: "Successfully added to cart"

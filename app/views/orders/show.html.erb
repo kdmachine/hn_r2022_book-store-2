@@ -1,0 +1,13 @@
+<div class="container-fluid px-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h3 class="mt-4"><%= t "order_detail" %></h3>
+    <button type="button" class="btn btn-lg btn-primary md-btn-flat">
+      <%= link_to t("back"), orders_path, class:"text-decoration-none text-white" %>
+    </button>
+  </div>
+  <% @order.each do |item| %>
+    <% if item.id == params[:id].to_i %>
+      <%= render partial: "order_detail", locals: {order: item} %>
+    <% end %>
+  <% end %>
+</div>

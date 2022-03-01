@@ -3,7 +3,8 @@ class Admin::BooksController < AdminController
   before_action :check_order_detail, except: %i(destroy)
 
   def index
-    @pagy, @books = pagy Book.recent_add, items: Settings.page_items_10
+    @pagy, @books = pagy Book.recent_add.search(params[:term]),
+                         items: Settings.page_items_10
   end
 
   def show; end
