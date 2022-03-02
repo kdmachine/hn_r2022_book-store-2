@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
     init_order
     create_order_detail
     ActiveRecord::Base.transaction do
+      @order.status_pending!
       @order.save!
       handle_success_create_order
     end

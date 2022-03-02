@@ -1,5 +1,6 @@
 class Admin::CategoriesController < AdminController
   before_action :load_category, except: %i(index new create)
+  before_action :check_books, only: :destroy
 
   def index
     @pagy, @categories = pagy Category.recent_add.search(params[:term]),
@@ -55,5 +56,12 @@ class Admin::CategoriesController < AdminController
 
     flash[:danger] = t "not_found"
     redirect_to admin_root_path
+  end
+
+  def check_books
+    return if @category.books.empty?
+
+    flash[:danger] = t "dont_move_cate"
+    refresh
   end
 end
