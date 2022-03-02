@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   before_action :check_login
+  before_action :load_order, only: %i(destroy)
 
   def new; end
 
   def index
-    @orders = Order.get_order(current_user[:id])
+    @orders = Order.get_order(current_user[:id]).newest
   end
 
   def show
@@ -24,6 +25,16 @@ class OrdersController < ApplicationController
     end
   rescue StandardError => e
     handle_exception e
+  end
+
+  def destroy
+    ActiveRecord::Base.transaction do
+      @order.status_canceled!
+    end
+    refresh
+  rescue ActiveRecord::RecordInvalid
+    flash[:danger] = t "delete_fail"
+    refresh
   end
 
   private
