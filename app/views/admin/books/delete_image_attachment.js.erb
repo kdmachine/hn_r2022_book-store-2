@@ -4,7 +4,7 @@ $('#book_show').html(`
       <%= j image_tag image, {class: "img-fluid img-thumbnail"}%>
       <%= j link_to t(".remove"), delete_image_attachment_admin_book_url(image.id),
               method: :delete,
-              data: { confirm: t(".rusure")},
+              data: { confirm: t(".sure")},
               remote: true %>
     </div>
   <% end %>

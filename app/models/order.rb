@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   ORDER_PROPERTIES = %i(customer_name delivery_phone
                       delivery_address note).freeze
 
-  after_update :reduce_quantity, if: ->{@order.status_accepted?}
+  after_update :reduce_quantity, if: ->{@order.status_pending?}
   after_update :restore_quantity,
                if: ->{@order.status_rejected? || @order.status_canceled?}
 

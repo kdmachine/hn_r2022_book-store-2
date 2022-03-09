@@ -71,7 +71,8 @@ en:
     order: 
       product: "Your Product"
 
-  dont_move_book: "Please double check before deleting book"
+  dont_move_book: "Please check before deleting this book"
+  dont_move_cate: "Please check before deleting this category"
   save_change: "Save change"
   update_fail: "Update fail"
   delete_fail: "Delete fail"
@@ -86,3 +87,6 @@ en:
   sure: "Are you sure?"
   cancel_confirm: "Are you sure cancel this order?"
   reject_confirm: "Are you sure reject this order?"
+  num_of_pages: "Number of page"
+  description: "Description"
+  update_book: "Update book"
