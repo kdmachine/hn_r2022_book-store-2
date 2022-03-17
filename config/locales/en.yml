@@ -56,6 +56,7 @@ en:
   delete: "Delete"
   go_checkout: "Go to check out"
   please_login: "Please login to check out."
+  not_permission: "You dont have permission!"
 
   error:
     error_valid: "The form contains %{error}"
