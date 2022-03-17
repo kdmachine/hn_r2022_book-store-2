@@ -1,4 +1,6 @@
 class Admin::OrdersController < AdminController
+  authorize_resource class: false
+
   before_action :load_order, only: %i(destroy update)
   before_action :load_newest_order, only: %i(index destroy update)
 

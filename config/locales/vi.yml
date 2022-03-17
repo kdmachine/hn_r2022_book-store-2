@@ -56,6 +56,7 @@ vi:
   delete: "Xoá"
   go_checkout: "Đi tới đặt hàng"
   please_login: "Vui lòng đăng nhập để đặt hàng."
+  not_permission: "Không có quyền truy cập!"
 
   error:
     error_valid: "Hiện đang có %{error}"

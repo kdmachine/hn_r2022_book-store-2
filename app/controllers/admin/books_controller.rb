@@ -1,4 +1,6 @@
 class Admin::BooksController < AdminController
+  authorize_resource class: false
+
   before_action :load_book, except: %i(index new create)
   before_action :check_order_details, only: :destroy
 

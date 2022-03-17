@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :permit_params, if: :devise_controller?
   protect_from_forgery with: :exception
 
+  rescue_from CanCan::AccessDenied, with: :access_denied
+
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -47,5 +49,10 @@ class ApplicationController < ActionController::Base
   def permit_params
     devise_parameter_sanitizer.permit :sign_up, keys: User::PROPERTIES
     devise_parameter_sanitizer.permit :account_update, keys: User::PROPERTIES
+  end
+
+  def access_denied
+    flash[:alert] = t "not_permission"
+    redirect_to root_url
   end
 end

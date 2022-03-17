@@ -1,4 +1,6 @@
 class Admin::CategoriesController < AdminController
+  authorize_resource class: false
+
   before_action :load_category, except: %i(index new create)
   before_action :check_books, only: :destroy
 
