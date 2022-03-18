@@ -1,9 +1,7 @@
 <div class="container mt-50 mb-50">
   <h3 class="mt-4"><%= t "store.all_product" %></h3>
   <div class="row mb-4">
-    <%= form_tag(books_path, method: :get) do %>
-      <%= render "search/search" %>
-    <% end %>
+    <%= render "form_search" %>
     <%= render partial: "books", collection: @books, as: :book %>
   </div>
   <%== pagy_bootstrap_nav @pagy %>

@@ -1,0 +1,12 @@
+<%= search_form_for @search, url: admin_orders_path, class: "form-inline justify-content-end" do |f| %>
+  <div class="form-floating mr-2">
+    <%= f.date_field :created_at_eq, value: "%Y/%D/%M", class: "form-control" %><br>
+    <label><%= t "create_date" %></label>
+  </div>
+  <div class="mr-2">
+    <%= f.select :status_eq,
+      options_from_collection_for_select(Order.statuses, "pop", "shift"),
+      {prompt: t("status")}, class: "form-select form-select-lg" %>
+  </div>
+  <%= f.submit t("search"), class: "btn btn-primary search-btn" %>
+<% end %>

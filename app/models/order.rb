@@ -35,4 +35,8 @@ class Order < ApplicationRecord
       od.book.update! quantity: od.book.quantity - od.quantity
     end
   end
+
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
 end
