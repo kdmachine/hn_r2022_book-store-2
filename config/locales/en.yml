@@ -58,6 +58,11 @@ en:
   please_login: "Please login to check out."
   not_permission: "You dont have permission!"
 
+  info: "Info"
+  price_greater_than: "Price greater than"
+  price_less_than: "Price less than"
+  create_date: "Create date"
+
   error:
     error_valid: "The form contains %{error}"
     error: "error"

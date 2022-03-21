@@ -2,7 +2,7 @@ class Admin::OrdersController < AdminController
   authorize_resource class: false
 
   before_action :load_order, only: %i(destroy update)
-  before_action :load_newest_order, only: %i(index destroy update)
+  before_action :load_and_search_orders, only: %i(index destroy update)
 
   def index; end
 
@@ -28,7 +28,9 @@ class Admin::OrdersController < AdminController
 
   private
 
-  def load_newest_order
-    @pagy, @orders = pagy Order.newest, items: Settings.orders_per_page
+  def load_and_search_orders
+    @search = Order.ransack params[:q]
+    @pagy, @orders = pagy @search.result.newest,
+                          items: Settings.page_items_10
   end
 end

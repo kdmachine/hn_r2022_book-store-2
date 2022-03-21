@@ -5,7 +5,8 @@ class Admin::BooksController < AdminController
   before_action :check_order_details, only: :destroy
 
   def index
-    @pagy, @books = pagy Book.recent_add.search(params[:term]),
+    @search = Book.ransack params[:q]
+    @pagy, @books = pagy @search.result,
                          items: Settings.page_items_10
   end
 

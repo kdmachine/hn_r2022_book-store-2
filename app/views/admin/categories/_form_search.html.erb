@@ -1,0 +1,7 @@
+<%= search_form_for @search, url: admin_categories_path, class: "form-inline" do |f| %>
+  <div class="form-floating mr-2">
+    <%= f.text_field :category_cont, class: "form-control" %><br>
+    <label><%= t "info" %></label>
+  </div>
+  <%= f.submit t("search"), class: "btn btn-primary search-btn" %>
+<% end %>
