@@ -38,4 +38,9 @@ class Book < ApplicationRecord
   scope :recent_add, ->{order created_at: :desc}
   scope :load_book_in_category, ->(category_id){where(category_id: category_id)}
   scope :check_order_detail, ->(book_id){where(book_id: book_id)}
+
+  ransack_alias :book, :name_or_desc_or_publisher_name
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
 end

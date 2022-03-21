@@ -58,6 +58,11 @@ vi:
   please_login: "Vui lòng đăng nhập để đặt hàng."
   not_permission: "Không có quyền truy cập!"
 
+  info: "Thông tin"
+  price_greater_than: "Giá lớn hơn"
+  price_less_than: "Giá nhỏ hơn"
+  create_date: "Ngày tạo"
+
   error:
     error_valid: "Hiện đang có %{error}"
     error: "lỗi"

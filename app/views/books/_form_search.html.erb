@@ -1,0 +1,7 @@
+<%= search_form_for @search, url: books_path do |f| %>
+  <div class="d-flex form-floating">
+    <%= f.text_field :book_cont, class: "form-control shadow-none" %><br>
+    <label><%= t "info" %></label>
+    <%= f.submit t("search"), class: "btn btn-primary search-btn" %>
+  </div>
+<% end %>

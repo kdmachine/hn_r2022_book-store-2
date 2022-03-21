@@ -9,4 +9,6 @@ class Category < ApplicationRecord
     length: {maximum: Settings.max_name}
   validates :desc, presence: true,
     length: {maximum: Settings.max_desc}
+
+  ransack_alias :category, :name_or_desc
 end

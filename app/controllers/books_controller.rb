@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
-    @pagy, @books = pagy Book.search(params[:term]).recent_add,
+    @search = Book.ransack params[:q]
+    @pagy, @books = pagy @search.result,
                          items: Settings.page_items_10
   end
 

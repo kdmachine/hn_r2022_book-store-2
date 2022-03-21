@@ -55,4 +55,12 @@ class ApplicationController < ActionController::Base
     flash[:alert] = t "not_permission"
     redirect_to root_url
   end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+    return if @order
+
+    flash[:danger] = t "order_not_found"
+    redirect_to root_path
+  end
 end
