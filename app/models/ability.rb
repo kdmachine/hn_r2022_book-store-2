@@ -3,13 +3,16 @@ class Ability
 
   def initialize user
     can %i(read), Book
-    can %i(read), Order
+    can %i(read create), Order
+    can %i(read), OrderDetail
 
-    if user.admin?
+    if user&.admin?
       can :manage, :all
-    else
+    elsif user&.user?
       can %i(create update destroy), OrderDetail
       can %i(read update), User, id: user.id
+    else
+      return
     end
   end
 end

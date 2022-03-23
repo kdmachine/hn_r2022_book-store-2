@@ -11,9 +11,11 @@
 
     <div class="container mt-2">
       <%= render "devise/shared/flash_notices" %>
-      <div class="main">
+      <div class="main min-vh-100">
         <%= yield %>
       </div>
     </div>
+
+    <%= render "layouts/footer" %>
   </body>
 </html>

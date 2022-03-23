@@ -8,7 +8,8 @@ class CartsController < ApplicationController
     cur_cart_item = @cart.map do |item|
       next item if item["book_id"] == @cart_params["book_id"].to_i
     end
-    if cur_cart_item.compact!.present?
+    cur_cart_item.compact!
+    if cur_cart_item[0].present?
       cur_cart_item[0]["quantity"] += @cart_params["quantity"].to_i
     else
       @cart << {
@@ -23,7 +24,10 @@ class CartsController < ApplicationController
     @cart.reject! do |item|
       item["book_id"] == params[:book_id].to_i
     end
-    refresh
+
+    respond_to do |format|
+      format.js{render :destroy}
+    end
   end
 
   private
