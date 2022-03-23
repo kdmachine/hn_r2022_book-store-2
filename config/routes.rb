@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     delete "/carts", to: "carts#destroy", as: :delete_cart
     put "/minus_items", to: "minus_items#update", as: :quantity_minus
     put "/plus_items", to: "plus_items#update", as: :quantity_plus
-    
+
     as :user do
       get "/login", to: "devise/sessions#new"
       post "/login", to: "devise/sessions#create"
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
     resources :categories, only: %i(show)
     resources :books, only: %i(index show)
-    resources :carts, only: :create
+    resources :carts, only: %i(index create)
     resources :orders, except: %i(edit)
     namespace :admin do
       resources :homes

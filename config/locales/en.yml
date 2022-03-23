@@ -57,16 +57,16 @@ en:
   go_checkout: "Go to check out"
   please_login: "Please login to check out."
   not_permission: "You dont have permission!"
+  you_sure: "Are you sure?"
 
   info: "Info"
   price_greater_than: "Price greater than"
   price_less_than: "Price less than"
   create_date: "Create date"
 
-  error:
-    error_valid: "The form contains %{error}"
-    error: "error"
-    not_found: "Page not found"
+  error_valid: "The form contains %{error}"
+  error: "error"
+  not_found: "Page not found"
 
   store:
     new_product: "New Product"
@@ -75,7 +75,7 @@ en:
     product_category: "Category name example"
     product_price: "10.000 VND"
     add_to_cart: "Add to cart"
-    order: 
+    order:
       product: "Your Product"
 
   dont_move_book: "Please check before deleting this book"

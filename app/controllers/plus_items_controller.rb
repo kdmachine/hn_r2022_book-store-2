@@ -4,6 +4,9 @@ class PlusItemsController < ApplicationController
 
   def update
     @get_cart_book["quantity"] += Settings.one
-    refresh
+
+    respond_to do |format|
+      format.js{render "carts/quantity"}
+    end
   end
 end

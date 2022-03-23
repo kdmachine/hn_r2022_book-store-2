@@ -17,7 +17,7 @@ vi:
   id: "ID"
   name: "Tên"
   quantity: "Số lượng"
-  Price: "Giá"
+  price: "Giá"
   total: "Tổng"
   publisher: "Nhà phát hành"
   author: "Tác giả"
@@ -57,16 +57,16 @@ vi:
   go_checkout: "Đi tới đặt hàng"
   please_login: "Vui lòng đăng nhập để đặt hàng."
   not_permission: "Không có quyền truy cập!"
+  you_sure: "Bạn có chắc?"
 
   info: "Thông tin"
   price_greater_than: "Giá lớn hơn"
   price_less_than: "Giá nhỏ hơn"
   create_date: "Ngày tạo"
 
-  error:
-    error_valid: "Hiện đang có %{error}"
-    error: "lỗi"
-    not_found: "Trang không tồn tại"
+  error_valid: "Hiện đang có %{error}"
+  error: "lỗi"
+  not_found: "Trang không tồn tại"
 
   store:
     new_product: "Sản phẩm mới"
@@ -75,5 +75,5 @@ vi:
     product_category: "Category name example"
     product_price: "10.000 VND"
     add_to_cart: "Thêm vào giỏ"
-    order: 
+    order:
       product: "Sản phẩm của bạn"

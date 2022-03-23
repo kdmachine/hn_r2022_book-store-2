@@ -6,6 +6,9 @@ class MinusItemsController < ApplicationController
     if @get_cart_book["quantity"] > Settings.one
       @get_cart_book["quantity"] -= Settings.one
     end
-    refresh
+
+    respond_to do |format|
+      format.js{render "carts/quantity"}
+    end
   end
 end

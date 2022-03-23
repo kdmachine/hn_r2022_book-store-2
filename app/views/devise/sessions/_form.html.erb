@@ -9,10 +9,12 @@
   </div>
   
   <div class="d-flex align-items-center justify-content-between mt-2 mb-2">
-    <div class="form-check mb-3">
-      <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-      <label class="form-check-label" for="inputRememberPassword"><%= t "remember" %></label>
-    </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="form-check mb-3">
+        <%= f.check_box :remember_me, class: "form-check-input" %>
+        <label class="form-check-label" for="inputRememberPassword"><%= t "remember" %></label>
+      </div>
+    <% end %>
     <%= f.submit t("login"), class: "btn btn-primary" %>
   </div>
   <%= render "devise/shared/links" %>

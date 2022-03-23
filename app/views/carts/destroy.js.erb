@@ -1,0 +1,2 @@
+$("#cart_<%= params[:book_id].to_i %>").remove();
+$("#flash_messages").html("<%= j render 'devise/shared/flash_notices' %>");
